@@ -88,8 +88,8 @@ A powerful REST API **primarily focused on Minecraft utilities** with additional
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/shrekapi.git
-   cd shrekapi
+   git clone https://github.com/SparkyOfficial/ShrekAPI.git
+   cd ShrekAPI
    ```
 
 2. **Install dependencies**
@@ -761,7 +761,7 @@ npm run lint
 
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/shrekapi.git
+git clone https://github.com/SparkyOfficial/ShrekAPI.git
 
 # Install dependencies
 npm install
@@ -787,7 +787,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/shrekapi/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/SparkyOfficial/ShrekAPI/issues)
 - 📖 Documentation: [API Docs](https://your-shrekapi-url.com/api/docs)
 - 💬 Discord: [Join our community](https://discord.gg/gz8KUkWWMj)
 

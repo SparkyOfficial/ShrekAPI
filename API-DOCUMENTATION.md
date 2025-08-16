@@ -89,7 +89,7 @@ def check_server_performance(server_ip):
 
 ### Локальная разработка
 ```bash
-git clone https://github.com/your-repo/ShrekAPI
+git clone https://github.com/SparkyOfficial/ShrekAPI
 cd ShrekAPI
 npm install
 npm start
