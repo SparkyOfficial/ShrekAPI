@@ -787,10 +787,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: support@shrekapi.com
 - 🐛 Issues: [GitHub Issues](https://github.com/yourusername/shrekapi/issues)
 - 📖 Documentation: [API Docs](https://your-shrekapi-url.com/api/docs)
-- 💬 Discord: [Join our community](https://discord.gg/shrekapi)
+- 💬 Discord: [Join our community](https://discord.gg/gz8KUkWWMj)
 
 ## 🗺️ Roadmap
 

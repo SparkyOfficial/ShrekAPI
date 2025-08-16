@@ -49,6 +49,9 @@ const minecraftWorldsRoutes = require('./routes/minecraft/worlds');
 const minecraftPluginsRoutes = require('./routes/minecraft/plugins');
 const minecraftModsRoutes = require('./routes/minecraft/mods');
 const minecraftResourcePacksRoutes = require('./routes/minecraft/resourcepacks');
+const minecraftConfigRoutes = require('./routes/minecraft/config');
+const minecraftDashboardRoutes = require('./routes/minecraft/dashboard');
+const minecraftAutomationRoutes = require('./routes/minecraft/automation');
 
 // Use routes
 app.use('/api/utils', dataRoutes);
@@ -61,6 +64,9 @@ app.use('/api/mc/worlds', minecraftWorldsRoutes);
 app.use('/api/mc/plugins', minecraftPluginsRoutes);
 app.use('/api/mc/mods', minecraftModsRoutes);
 app.use('/api/mc/resourcepacks', minecraftResourcePacksRoutes);
+app.use('/api/mc/config', minecraftConfigRoutes);
+app.use('/api/mc/dashboard', minecraftDashboardRoutes);
+app.use('/api/mc/automation', minecraftAutomationRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
