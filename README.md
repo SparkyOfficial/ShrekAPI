@@ -13,24 +13,69 @@
 - [Quick Start](#quick-start)
 - [API Documentation](#api-documentation)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## 🌟 Overview
 
-ShrekAPI is a comprehensive REST API designed for developers, providing a wide range of utilities from data manipulation and Minecraft tools to code quality analysis and performance monitoring. Built with Node.js and Express, it's designed to be fast, reliable, and easy to use.
+# ShrekAPI - Minecraft-Focused Developer Tools
 
-### Key Features
+A powerful REST API **primarily focused on Minecraft utilities** with additional developer tools. Built for Minecraft server administrators, plugin developers, modpack creators, and the broader Minecraft community.
 
-- **📊 Data & Utils**: UUID generation, password creation, hashing, encoding, validation
-- **🎮 Minecraft Utilities**: Server pinging, skin downloads, UUID lookups, MOTD generation
-- **☕ Java/Kotlin Tools**: Code decompilation, conversion, regex testing, build tools
-- **📱 Android Helpers**: Manifest permissions, resource optimization, ProGuard rules
-- **🌐 Network & Web**: IP lookup, URL shortening, DNS queries, SSL checking
-- **🔍 Code Quality**: Complexity analysis, code formatting, smell detection
-- **⚙️ Development Utils**: Cron parsing, environment validation, log analysis
-- **🎯 Game Development**: Plugin templates, command generation, world tools
-- **📈 Analytics & Monitoring**: Performance benchmarks, memory analysis, uptime tracking
+## 🎮 **Primary Focus: Advanced Minecraft Tools**
+
+### 🖥️ **Server Management & Analysis**
+- **Advanced Server Ping**: Detailed server analysis with performance metrics
+- **Batch Server Monitoring**: Monitor multiple servers simultaneously  
+- **Server Performance Analysis**: Real-time TPS, ping, and stability monitoring
+- **Server Comparison Tools**: Compare multiple servers across various metrics
+- **Troubleshooting Assistant**: Automated diagnostics for offline servers
+
+### 👤 **Player Profile & Statistics**
+- **Comprehensive Player Profiles**: Complete player data with history analysis
+- **Batch Player Lookup**: Process multiple players efficiently
+- **Advanced Skin Analysis**: Skin complexity, color analysis, and variants
+- **Username Availability**: Check name availability with smart suggestions
+- **Player Statistics Estimator**: Generate realistic player statistics
+- **Player Comparison Tools**: Compare multiple players across metrics
+
+### 🌍 **World Management & Optimization**
+- **Advanced Seed Analysis**: Detailed world generation analysis with coordinates
+- **Custom Seed Generator**: Generate seeds based on specific criteria
+- **World Backup Analyzer**: Analyze and validate world backups
+- **World Optimization**: Performance optimization suggestions
+- **Version Converter**: Convert worlds between Minecraft versions
+- **World Statistics**: Comprehensive world analytics and insights
+
+### 🔧 **Plugin Development Suite**
+- **Advanced Plugin Templates**: Generate complete plugin structures
+- **Dependency Analyzer**: Check plugin compatibility and conflicts
+- **Performance Optimizer**: Analyze and optimize plugin code
+- **Configuration Generator**: Create optimized plugin configs
+- **Command Generator**: Generate command classes with full functionality
+- **Event Handler Generator**: Create event handlers with best practices
+- **Database Integration**: Setup database connections and migrations
+- **GUI Generator**: Create inventory GUIs with animations
+- **Testing Framework**: Generate comprehensive test suites
+
+### 📦 **Mod Management & Analysis**
+- **Mod Compatibility Checker**: Analyze mod compatibility across versions
+- **Modpack Generator**: Create themed modpacks with optimization
+- **Performance Analyzer**: Analyze mod performance impact
+- **Configuration Optimizer**: Optimize mod configs for performance
+- **Update Checker**: Check for mod updates with changelog analysis
+- **Dependency Resolver**: Resolve complex mod dependency trees
+
+### 🎨 **Resource Pack Tools**
+- **Resource Pack Analyzer**: Comprehensive pack analysis and optimization
+- **Texture Optimizer**: Reduce file sizes while maintaining quality
+- **Custom Model Generator**: Create block and item models
+- **Sound Pack Creator**: Generate custom sound packs
+- **Pack Format Converter**: Convert between Minecraft versions
+- **Animated Texture Generator**: Create animated textures with .mcmeta
+- **Block State Generator**: Generate complex blockstate files
+- **Pack Merger**: Merge multiple resource packs intelligently
+
+## 🛠️ **Additional Utility Tools**
 
 ## 🚀 Quick Start
 

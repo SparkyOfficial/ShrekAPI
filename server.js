@@ -39,26 +39,28 @@ app.use(async (req, res, next) => {
 });
 
 // Import route modules
-const dataRoutes = require('./routes/data');
-const minecraftRoutes = require('./routes/minecraft');
-const javaRoutes = require('./routes/java');
-const androidRoutes = require('./routes/android');
-const networkRoutes = require('./routes/network');
-const codeQualityRoutes = require('./routes/codeQuality');
-const devUtilsRoutes = require('./routes/devUtils');
-const gameDevRoutes = require('./routes/gameDev');
-const analyticsRoutes = require('./routes/analytics');
+const dataRoutes = require('./routes/utils/data');
+const networkRoutes = require('./routes/utils/network');
+
+// Minecraft-focused routes
+const minecraftServersRoutes = require('./routes/minecraft/servers');
+const minecraftPlayersRoutes = require('./routes/minecraft/players');
+const minecraftWorldsRoutes = require('./routes/minecraft/worlds');
+const minecraftPluginsRoutes = require('./routes/minecraft/plugins');
+const minecraftModsRoutes = require('./routes/minecraft/mods');
+const minecraftResourcePacksRoutes = require('./routes/minecraft/resourcepacks');
 
 // Use routes
-app.use('/api', dataRoutes);
-app.use('/api/mc', minecraftRoutes);
-app.use('/api', javaRoutes);
-app.use('/api/android', androidRoutes);
-app.use('/api', networkRoutes);
-app.use('/api/code', codeQualityRoutes);
-app.use('/api', devUtilsRoutes);
-app.use('/api/mc', gameDevRoutes);
-app.use('/api', analyticsRoutes);
+app.use('/api/utils', dataRoutes);
+app.use('/api/utils', networkRoutes);
+
+// Minecraft-focused routes (main focus)
+app.use('/api/mc/servers', minecraftServersRoutes);
+app.use('/api/mc/players', minecraftPlayersRoutes);
+app.use('/api/mc/worlds', minecraftWorldsRoutes);
+app.use('/api/mc/plugins', minecraftPluginsRoutes);
+app.use('/api/mc/mods', minecraftModsRoutes);
+app.use('/api/mc/resourcepacks', minecraftResourcePacksRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -68,43 +70,29 @@ app.get('/', (req, res) => {
     description: 'Comprehensive API for developers with utilities, Minecraft tools, and more',
     documentation: '/api/docs',
     endpoints: {
-      'Data & Utils': [
-        '/api/random/uuid',
-        '/api/random/password',
-        '/api/random/name',
-        '/api/hash/md5',
-        '/api/hash/sha256',
-        '/api/encode/base64',
-        '/api/format/json',
-        '/api/validate/email',
-        '/api/validate/phone',
-        '/api/color/hex2rgb',
-        '/api/timestamp/convert',
-        '/api/qr/generate'
+      'Minecraft Tools (Primary Focus)': [
+        '/api/mc/servers - Advanced server analysis and monitoring',
+        '/api/mc/players - Comprehensive player profiles and statistics',
+        '/api/mc/worlds - World analysis, optimization, and conversion',
+        '/api/mc/plugins - Plugin development and management tools',
+        '/api/mc/mods - Mod compatibility and performance analysis',
+        '/api/mc/resourcepacks - Resource pack creation and optimization'
       ],
-      'Minecraft Utilities': [
-        '/api/mc/server/ping',
-        '/api/mc/skin/download',
-        '/api/mc/username/history',
-        '/api/mc/uuid/lookup',
-        '/api/mc/server/motd',
-        '/api/mc/color/codes',
-        '/api/mc/item/recipe',
-        '/api/mc/enchant/calculator',
-        '/api/mc/world/seed/info',
-        '/api/mc/version/check'
-      ],
-      'Java/Kotlin Tools': [
-        '/api/java/class/decompile',
-        '/api/kotlin/java/convert',
-        '/api/regex/test',
-        '/api/sql/format',
-        '/api/lombok/generate',
-        '/api/gradle/version/latest',
-        '/api/spring/property/generator',
-        '/api/exception/analyzer',
-        '/api/jar/info',
-        '/api/jvm/memory/calculator'
+      'Utility Tools': [
+        '/api/utils/uuid - UUID generation',
+        '/api/utils/password - Password generation',
+        '/api/utils/hash - Hashing utilities',
+        '/api/utils/base64 - Base64 encoding/decoding',
+        '/api/utils/json - JSON formatting and validation',
+        '/api/utils/validate - Email and phone validation',
+        '/api/utils/color - Color conversion tools',
+        '/api/utils/timestamp - Timestamp utilities',
+        '/api/utils/qr - QR code generation',
+        '/api/utils/ip - IP information lookup',
+        '/api/utils/url - URL utilities',
+        '/api/utils/dns - DNS lookup tools',
+        '/api/utils/http - HTTP status codes',
+        '/api/utils/ssl - SSL certificate checking'
       ]
     }
   });
