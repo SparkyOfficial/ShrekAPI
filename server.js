@@ -42,31 +42,43 @@ app.use(async (req, res, next) => {
 const dataRoutes = require('./routes/utils/data');
 const networkRoutes = require('./routes/utils/network');
 
-// Minecraft-focused routes
-const minecraftServersRoutes = require('./routes/minecraft/servers');
-const minecraftPlayersRoutes = require('./routes/minecraft/players');
-const minecraftWorldsRoutes = require('./routes/minecraft/worlds');
-const minecraftPluginsRoutes = require('./routes/minecraft/plugins');
-const minecraftModsRoutes = require('./routes/minecraft/mods');
-const minecraftResourcePacksRoutes = require('./routes/minecraft/resourcepacks');
-const minecraftConfigRoutes = require('./routes/minecraft/config');
-const minecraftDashboardRoutes = require('./routes/minecraft/dashboard');
-const minecraftAutomationRoutes = require('./routes/minecraft/automation');
+// Import Minecraft routes
+const serversRoute = require('./routes/minecraft/servers');
+const playersRoute = require('./routes/minecraft/players');
+const worldsRoute = require('./routes/minecraft/worlds');
+const pluginsRoute = require('./routes/minecraft/plugins');
+const modsRoute = require('./routes/minecraft/mods');
+const resourcepacksRoute = require('./routes/minecraft/resourcepacks');
+const configRoute = require('./routes/minecraft/config');
+const dashboardRoute = require('./routes/minecraft/dashboard');
+const automationRoute = require('./routes/minecraft/automation');
+const commandsRoute = require('./routes/minecraft/commands');
+const datapacksRoute = require('./routes/minecraft/datapacks');
+const performanceRoute = require('./routes/minecraft/performance');
+const economyRoute = require('./routes/minecraft/economy');
+const permissionsRoute = require('./routes/minecraft/permissions');
+const moderationRoute = require('./routes/minecraft/moderation');
 
 // Use routes
 app.use('/api/utils', dataRoutes);
 app.use('/api/utils', networkRoutes);
 
 // Minecraft-focused routes (main focus)
-app.use('/api/mc/servers', minecraftServersRoutes);
-app.use('/api/mc/players', minecraftPlayersRoutes);
-app.use('/api/mc/worlds', minecraftWorldsRoutes);
-app.use('/api/mc/plugins', minecraftPluginsRoutes);
-app.use('/api/mc/mods', minecraftModsRoutes);
-app.use('/api/mc/resourcepacks', minecraftResourcePacksRoutes);
-app.use('/api/mc/config', minecraftConfigRoutes);
-app.use('/api/mc/dashboard', minecraftDashboardRoutes);
-app.use('/api/mc/automation', minecraftAutomationRoutes);
+app.use('/api/mc/servers', serversRoute);
+app.use('/api/mc/players', playersRoute);
+app.use('/api/mc/worlds', worldsRoute);
+app.use('/api/mc/plugins', pluginsRoute);
+app.use('/api/mc/mods', modsRoute);
+app.use('/api/mc/resourcepacks', resourcepacksRoute);
+app.use('/api/mc/config', configRoute);
+app.use('/api/mc/dashboard', dashboardRoute);
+app.use('/api/mc/automation', automationRoute);
+app.use('/api/mc/commands', commandsRoute);
+app.use('/api/mc/datapacks', datapacksRoute);
+app.use('/api/mc/performance', performanceRoute);
+app.use('/api/mc/economy', economyRoute);
+app.use('/api/mc/permissions', permissionsRoute);
+app.use('/api/mc/moderation', moderationRoute);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -82,7 +94,16 @@ app.get('/', (req, res) => {
         '/api/mc/worlds - World analysis, optimization, and conversion',
         '/api/mc/plugins - Plugin development and management tools',
         '/api/mc/mods - Mod compatibility and performance analysis',
-        '/api/mc/resourcepacks - Resource pack creation and optimization'
+        '/api/mc/resourcepacks - Resource pack creation and optimization',
+        '/api/mc/config - Server configuration and management',
+        '/api/mc/dashboard - Real-time monitoring dashboard',
+        '/api/mc/automation - Server automation and scheduling',
+        '/api/mc/commands - Advanced command generation',
+        '/api/mc/datapacks - Datapack creation and utilities',
+        '/api/mc/performance - Performance optimization tools',
+        '/api/mc/economy - Economy management system',
+        '/api/mc/permissions - Permission and whitelist management',
+        '/api/mc/moderation - Chat analysis and moderation tools'
       ],
       'Utility Tools': [
         '/api/utils/uuid - UUID generation',
