@@ -1,5 +1,7 @@
 const http = require('http');
 const url = require('url');
+const fs = require('fs');
+const path = require('path');
 
 const PORT = 3000;
 
@@ -50,33 +52,43 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Root endpoint
+  // Serve web interface
   if (path === '/') {
-    res.writeHead(200);
-    res.end(JSON.stringify({
-      name: 'ShrekAPI - Minecraft Utilities',
-      version: '1.0.0',
-      description: 'Comprehensive Minecraft server management and development API',
-      status: 'running',
-      endpoints: {
-        'Minecraft Tools': [
-          'GET /api/mc/servers/ping - Server ping and analysis',
-          'POST /api/mc/datapacks/generate - Generate datapacks',
-          'POST /api/mc/commands/generate - Generate Minecraft commands',
-          'POST /api/mc/performance/analyze - Performance analysis',
-          'POST /api/mc/economy/create - Economy management',
-          'POST /api/mc/permissions/system/create - Permission systems',
-          'POST /api/mc/moderation/chat/analyze - Chat moderation'
-        ],
-        'Test Endpoints': [
-          'GET /test/server-ping - Test server ping',
-          'GET /test/datapack - Test datapack generation',
-          'GET /test/commands - Test command generation'
-        ]
-      },
-      documentation: '/docs',
-      timestamp: new Date().toISOString()
-    }, null, 2));
+    try {
+      const htmlPath = __dirname + '/web-interface.html';
+      const html = fs.readFileSync(htmlPath, 'utf8');
+      res.setHeader('Content-Type', 'text/html');
+      res.writeHead(200);
+      res.end(html);
+      return;
+    } catch (error) {
+      // Fallback to JSON if HTML not found
+      res.writeHead(200);
+        res.end(JSON.stringify({
+        name: 'ShrekAPI - Minecraft Utilities',
+        version: '1.0.0',
+        description: 'Comprehensive Minecraft server management and development API',
+        status: 'running',
+        endpoints: {
+          'Minecraft Tools': [
+            'GET /api/mc/servers/ping - Server ping and analysis',
+            'POST /api/mc/datapacks/generate - Generate datapacks',
+            'POST /api/mc/commands/generate - Generate Minecraft commands',
+            'POST /api/mc/performance/analyze - Performance analysis',
+            'POST /api/mc/economy/create - Economy management',
+            'POST /api/mc/permissions/system/create - Permission systems',
+            'POST /api/mc/moderation/chat/analyze - Chat moderation'
+          ],
+          'Test Endpoints': [
+            'GET /test/server-ping - Test server ping',
+            'GET /test/datapack - Test datapack generation',
+            'GET /test/commands - Test command generation'
+          ]
+        },
+        documentation: '/docs',
+        timestamp: new Date().toISOString()
+      }, null, 2));
+    }
     return;
   }
 
