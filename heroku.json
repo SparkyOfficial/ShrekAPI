@@ -1,0 +1,34 @@
+{
+  "name": "shrekapi",
+  "description": "Comprehensive API for developers with utilities, Minecraft tools, and more",
+  "repository": "https://github.com/yourusername/shrekapi",
+  "logo": "https://via.placeholder.com/128x128.png?text=ShrekAPI",
+  "keywords": ["api", "utilities", "minecraft", "development", "tools"],
+  "image": "heroku/nodejs",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Skip dev dependencies",
+      "value": "true"
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo 'ShrekAPI deployed successfully!'"
+  },
+  "addons": []
+}

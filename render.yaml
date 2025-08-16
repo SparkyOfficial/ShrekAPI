@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: shrekapi
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: RATE_LIMIT_POINTS
+        value: 100
+      - key: RATE_LIMIT_DURATION
+        value: 60
+    healthCheckPath: /health
+    autoDeploy: true
+    branch: main
